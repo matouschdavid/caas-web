@@ -1,0 +1,8 @@
+<p class="card-text">You have <span class="text-primary">{{cartItems.length}}</span> items in your cart
+</p>
+<ul class="list-group">
+    <li class="list-group-item app-cart-list-item" *ngFor="let item of cartItems" [item]="item"
+        (removeItem)="removeItemFromCart($event)" (increaseItem)="increaseItemFromCart($event)"
+        (decreaseItem)="decreaseItemFromCart($event)">
+    </li>
+</ul>

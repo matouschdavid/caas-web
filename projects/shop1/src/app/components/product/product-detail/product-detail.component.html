@@ -1,0 +1,9 @@
+<!-- product detail page that displays all fields of a product and has an add to cart button -->
+<div *ngIf="product" class="container">
+    <h1> {{product.name}} </h1>
+    <p> {{product.description}} </p>
+    <div class="card p-3 w-25">
+        <h2> {{product.price | currency}} </h2>
+        <button class=" btn btn-primary" (click)="addToCart(product)">Add to Cart</button>
+    </div>
+</div>

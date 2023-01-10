@@ -1,0 +1,16 @@
+<!-- form for inputting all fields of customer and sign up-->
+<form (ngSubmit)="signUp()" class="form-signin">
+    <h1 class="h3 mb-3 fw-normal">Please sign up</h1>
+    <label for="name">Name</label>
+    <input id="name" type="text" class="form-control" [(ngModel)]="customerName" name="name">
+    <label for="email">Email</label>
+    <input id="email" type="email" class="form-control" [(ngModel)]="customerEmail" name="email">
+    <label for="cardNumber">Cardnumber</label>
+    <input id="cardNumber" type="text" class="form-control" [(ngModel)]="customerCardNumber" name="cardNumber">
+    <label for="cardExpiration">Card expiration date</label>
+    <input id="cardExpiration" type="text" class="form-control" [(ngModel)]="customerCardExpiration"
+        name="cardExpiration">
+    <label for="cardCVC">Card CVC</label>
+    <input id="cardCVC" type="number" class="form-control" [(ngModel)]="customerCardCVC" name="cardCVC">
+    <button class="w-100 btn btn-lg btn-primary mt-5" type="submit">Sign up</button>
+</form>

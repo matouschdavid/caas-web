@@ -1,0 +1,16 @@
+<div class="card m-4">
+    <div class="card-header">
+        <h5 class="card-title m-0">Order from {{ order?.orderDate | date: 'dd.MM.yyyy' }}</h5>
+    </div>
+    <div class="card-body">
+        <ul>
+            <li *ngFor="let position of order?.positions">
+                {{position.product.name}}: {{position.product.price}} x {{position.quantity}} = {{position.product.price
+                * position.quantity}}
+            </li>
+        </ul>
+    </div>
+    <div class="card-footer">
+        <p class="card-text">Total price: {{ order?.totalPrice }}</p>
+    </div>
+</div>

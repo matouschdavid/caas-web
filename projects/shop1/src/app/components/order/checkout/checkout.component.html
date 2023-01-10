@@ -1,0 +1,14 @@
+<!-- Know any coupons? input -->
+<form (ngSubmit)="addCoupon()" class="form-signin">
+    <label for="coupon">Coupon</label>
+    <input id="coupon" type="text" class="form-control" [(ngModel)]="couponCode" name="coupon">
+    <button class="w-100 btn btn-lg btn-primary mt-5" type="submit">Add coupon</button>
+</form>
+
+<!-- list of already added coupons -->
+<div class="mt-5">
+    <h1>Currently selected coupons</h1>
+    <p *ngFor="let coupon of coupons">{{ coupon }}</p>
+</div>
+
+<button class="w-100 btn btn-lg btn-primary mt-5" (click)="buy()">Buy</button>
