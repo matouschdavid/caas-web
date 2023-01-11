@@ -1,0 +1,18 @@
+<div class="card">
+    <div class="card-header">
+        <h5 class="card-title m-0">Add</h5>
+    </div>
+    <form (ngSubmit)="submitForm()">
+        <div class="card-body">
+            <div class="form-group" *ngFor="let itemField of itemFields">
+                <label [htmlFor]="itemField.name">{{itemField.name}}</label>
+                <input type="text" class="form-control" [id]="itemField.name" [name]="itemField.name"
+                    [(ngModel)]="itemField.value">
+            </div>
+        </div>
+        <div class="card-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal" type="reset">Close</button>
+            <button type="button" class="btn btn-primary" type="submit">Save changes</button>
+        </div>
+    </form>
+</div>

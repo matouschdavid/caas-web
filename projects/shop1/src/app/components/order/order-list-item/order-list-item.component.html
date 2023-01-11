@@ -12,5 +12,7 @@
     </div>
     <div class="card-footer">
         <p class="card-text">Total price: {{ order?.totalPrice }}</p>
+        <p class="card-text">Discount: {{ order?.discount }}</p>
+        <p class="card-text">Final price: {{ (order?.totalPrice ?? 0) - (order?.discount ?? 0) }}</p>
     </div>
 </div>

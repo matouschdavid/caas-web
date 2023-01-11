@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { Customer } from 'projects/common/src/lib/customer';
+import { UserService } from 'projects/common/src/lib/user.service';
+import { AuthService } from '../../auth.service';
 
 @Component({
   selector: 'app-user',
@@ -6,25 +9,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./user.component.css'],
 })
 export class UserComponent {
-  customerId: number | null = null;
-  customer: Customer | null = null;
-  constructor(private userService: UserService) {}
+  constructor(private authService: AuthService) {}
 
-  ngOnInit(): void {
-    this.userService.getCustomerIdUpdates().subscribe((customerId) => {
-      this.customerId = customerId;
-    });
-
-    this.userService.getCurrentUser().subscribe((customer) => {
-      this.customer = customer;
-    });
+  isLoggedIn() {
+    return this.authService.isLoggedIn();
   }
 
-  isLoggedIn(): boolean {
-    return this.customerId !== null;
-  }
-
-  logout(): void {
-    this.userService.setCustomerId(null);
+  logout() {
+    this.authService.logout();
   }
 }

@@ -1,0 +1,21 @@
+<div class="form-signin container">
+    <h1 class="h3 mb-3 fw-normal">Your Shop</h1>
+    <label for="shopId">Shop Id</label>
+    <input id="shopId" type="text" class="form-control" [(ngModel)]="shop.id" name="shopId" disabled>
+    <label for="name">Name</label>
+    <input id="name" type="text" class="form-control" [(ngModel)]="shop.name" name="name">
+    <label for="appkey">App Key</label>
+    <input id="appkey" type="text" class="form-control" [(ngModel)]="shop.appKey" name="appkey" disabled="">
+    <button *ngIf="!hasShop" class="w-100 btn btn-lg btn-primary mt-5" type="submit"
+        (click)="createShop()">Create</button>
+    <div class="row" *ngIf="hasShop">
+        <div class="col">
+            <a [href]="fileUrl" download="environment.ts" class="w-100 btn btn-lg btn-primary mt-5">Generate
+                Config</a>
+        </div>
+        <div class="col">
+            <button class="w-100 btn btn-lg btn-danger mt-5" type="submit" (click)="deleteShop()">Delete</button>
+        </div>
+    </div>
+
+</div>
