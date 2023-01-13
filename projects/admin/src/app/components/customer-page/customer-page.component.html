@@ -1,3 +1,4 @@
 <div class="container">
-    <app-item-list [items]="customers" [emptyItem]="getEmptyCustomer()"></app-item-list>
+    <app-item-list [emptyItem]="getEmpty()" [title]="getTitleValue" [body]="getContentValues"
+        [footer]="getFooterValue"></app-item-list>
 </div>

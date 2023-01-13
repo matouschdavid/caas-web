@@ -1,7 +1,6 @@
-import { Listable } from './listable';
 import { Shop } from './shop';
 
-export class Customer implements Listable {
+export class Customer {
   constructor(
     public id: number,
     public name: string,
@@ -12,16 +11,4 @@ export class Customer implements Listable {
     public shopId: number | null = null,
     public shop: Shop | null = null
   ) {}
-
-  getTitleValue() {
-    return this.name;
-  }
-
-  getContentValues() {
-    return [this.email, this.creditCardNumber, this.creditCardExpiration];
-  }
-
-  getFooterValue() {
-    return this.id;
-  }
 }

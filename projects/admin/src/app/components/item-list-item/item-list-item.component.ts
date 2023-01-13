@@ -1,5 +1,4 @@
 import { Component, Input } from '@angular/core';
-import { Listable } from 'projects/common/src/lib/listable';
 
 @Component({
   selector: 'app-item-list-item',
@@ -7,5 +6,11 @@ import { Listable } from 'projects/common/src/lib/listable';
   styleUrls: ['./item-list-item.component.css'],
 })
 export class ItemListItemComponent {
-  @Input() item: Listable | null = null;
+  @Input() item!: any;
+  @Input()
+  title!: (item: any) => string;
+  @Input()
+  body!: (item: any) => string[];
+  @Input()
+  footer!: (item: any) => string;
 }

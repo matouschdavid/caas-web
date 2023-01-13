@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { Customer } from 'projects/common/src/lib/customer';
-import { CustomerService } from '../../customer.service';
 
 @Component({
   selector: 'app-customer-page',
@@ -8,18 +7,23 @@ import { CustomerService } from '../../customer.service';
   styleUrls: ['./customer-page.component.css'],
 })
 export class CustomerPageComponent {
-  customers: Customer[] = [];
-
-  constructor(private customerService: CustomerService) {}
-
-  ngOnInit() {
-    this.customerService.getCustomers().subscribe((customers) => {
-      this.customers = customers;
-      console.log(this.customers);
-    });
+  getEmpty(): Customer {
+    return new Customer(0, '', '', '', '', 0, null, null);
   }
 
-  getEmptyCustomer(): Customer {
-    return new Customer(0, '', '', '', '', 0, null, null);
+  getTitleValue(customer: Customer): string {
+    return customer.name;
+  }
+
+  getContentValues(customer: Customer): string[] {
+    return [
+      customer.email,
+      customer.creditCardNumber,
+      customer.creditCardExpiration,
+    ];
+  }
+
+  getFooterValue(customer: Customer): string {
+    return `Id: ${customer.id}`;
   }
 }

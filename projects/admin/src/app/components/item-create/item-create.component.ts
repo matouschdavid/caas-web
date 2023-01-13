@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
-import { Listable } from 'projects/common/src/lib/listable';
+import { Router } from '@angular/router';
+import { ItemService } from '../../item.service';
 
 @Component({
   selector: 'app-item-create',
@@ -9,6 +10,8 @@ import { Listable } from 'projects/common/src/lib/listable';
 export class ItemCreateComponent {
   @Input() item: any | null = null;
   itemFields: any[] = [];
+
+  constructor(private router: Router, private itemService: ItemService) {}
 
   ngOnInit() {
     this.itemFields = this.getItemFields();
@@ -26,7 +29,14 @@ export class ItemCreateComponent {
       });
     return result;
   }
+
   submitForm() {
-    console.log('Submit form', this.itemFields);
+    this.itemFields.forEach((val) => {
+      this.item[val.name] = val.value;
+    }, {});
+    console.log(this.item);
+    this.itemService.createItem(this.item).subscribe((res) => {
+      this.router.navigate([this.router.url]);
+    });
   }
 }

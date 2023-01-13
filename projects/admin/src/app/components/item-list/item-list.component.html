@@ -1,3 +1,5 @@
-<app-item-list-item *ngFor="let item of items" [item]="item"></app-item-list-item>
+<app-item-list-item *ngFor="let item of items" [item]="item" [title]="title" [body]="body"
+    [footer]="footer"></app-item-list-item>
 
+<div class="m-5"></div>
 <app-item-create [item]="emptyItem"></app-item-create>

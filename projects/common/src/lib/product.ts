@@ -1,6 +1,4 @@
-import { Listable } from './listable';
-
-export class Product implements Listable {
+export class Product {
   constructor(
     public id: number,
     public name: string,
@@ -9,16 +7,4 @@ export class Product implements Listable {
     public price: number,
     public isDeleted: boolean
   ) {}
-
-  getTitleValue() {
-    return this.name;
-  }
-
-  getContentValues() {
-    return [this.description, this.price];
-  }
-
-  getFooterValue() {
-    return this.id;
-  }
 }

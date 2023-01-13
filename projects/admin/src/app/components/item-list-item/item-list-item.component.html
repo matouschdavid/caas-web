@@ -1,15 +1,15 @@
-<div class="card m-4">
+<div class="card mt-4 mb-4">
     <div class="card-header">
-        <h5 class="card-title m-0">{{item?.getTitleValue() }}</h5>
+        <h5 class="card-title m-0">{{title(item) }}</h5>
     </div>
     <div class="card-body">
         <ul>
-            <li *ngFor="let value of item?.getContentValues()">
+            <li *ngFor="let value of body(item)">
                 {{value}}
             </li>
         </ul>
     </div>
     <div class="card-footer">
-        <p class="card-text">{{item?.getFooterValue()}}</p>
+        <p class="card-text">{{footer(item)}}</p>
     </div>
 </div>
