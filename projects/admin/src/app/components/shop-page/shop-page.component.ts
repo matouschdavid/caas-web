@@ -33,7 +33,7 @@ export class ShopPageComponent {
   createConfigUrl() {
     const data = `export const environment = {
       production: false,
-      shopId: ${this.shop.id},
+      appKey: '${this.shop.appKey}',
     };`;
     const blob = new Blob([data], { type: 'application/octet-stream' });
 

@@ -1,20 +1,20 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { BaseService } from './base.service';
-import { Product } from './product';
-import { ShopService } from '../../../shop1/src/app/shop.service';
+import { BaseService } from '../../../common/src/lib/base.service';
+import { Product } from '../../../common/src/lib/product';
+import { environment } from '../environments/environment';
 
 @Injectable({
   providedIn: 'root',
 })
 export class ProductService extends BaseService {
-  constructor(private shopService: ShopService, http: HttpClient) {
+  constructor(http: HttpClient) {
     super(http);
   }
   getProducts(searchTerm: string): Observable<Product[]> {
     return super.get<Product[]>(
-      `product/all/${this.shopService.getShopId()}?search=${searchTerm}`
+      `product/all/${environment.appKey}?search=${searchTerm}`
     );
   }
 

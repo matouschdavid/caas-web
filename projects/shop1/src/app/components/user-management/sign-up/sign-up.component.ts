@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Customer } from 'projects/common/src/lib/customer';
-import { UserService } from 'projects/common/src/lib/user.service';
+import { UserService } from 'projects/shop1/src/app/user.service';
 
 @Component({
   selector: 'app-sign-up',

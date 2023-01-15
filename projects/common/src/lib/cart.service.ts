@@ -6,7 +6,7 @@ import { BaseService } from './base.service';
 import { Cart } from './cart';
 import { CollectionPosition } from './collection-position';
 import { Order } from './order';
-import { UserService } from './user.service';
+import { UserService } from '../../../shop1/src/app/user.service';
 
 @Injectable({
   providedIn: 'root',

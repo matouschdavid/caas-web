@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { CouponPageComponent } from './components/coupon-page/coupon-page.component';
 import { CustomerPageComponent } from './components/customer-page/customer-page.component';
 import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
@@ -18,6 +19,11 @@ const routes: Routes = [
   {
     path: 'customers',
     component: CustomerPageComponent,
+    canActivate: [IsLoggedInGuard],
+  },
+  {
+    path: 'coupons',
+    component: CouponPageComponent,
     canActivate: [IsLoggedInGuard],
   },
   {

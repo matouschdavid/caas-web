@@ -1,4 +1,4 @@
 export const environment = {
   production: false,
-  shopId: 2,
+  appKey: 'f1b121e9-5cd7-432d-8614-29d9fc48e840',
 };

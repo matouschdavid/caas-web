@@ -1,10 +1,9 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
-import { BaseService } from './base.service';
-import { Customer } from './customer';
-import { ShopService } from '../../../shop1/src/app/shop.service';
-
+import { BaseService } from '../../../common/src/lib/base.service';
+import { Customer } from '../../../common/src/lib/customer';
+import { environment } from '../environments/environment';
 @Injectable({
   providedIn: 'root',
 })
@@ -13,7 +12,7 @@ export class UserService extends BaseService {
     number | null
   >(null);
 
-  constructor(private shopService: ShopService, http: HttpClient) {
+  constructor(http: HttpClient) {
     super(http);
   }
 
@@ -42,8 +41,7 @@ export class UserService extends BaseService {
   }
 
   signUp(customer: Customer): Observable<Customer> {
-    customer.shopId = this.shopService.getShopId();
-    return super.post('customer', customer);
+    return super.post(`customer/${environment.appKey}`, customer);
   }
 
   login(customerId: number): Observable<Customer> {
