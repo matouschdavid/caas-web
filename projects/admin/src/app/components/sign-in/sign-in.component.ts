@@ -1,13 +1,13 @@
 import { Component } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { AuthService } from '../../auth.service';
 
 @Component({
-  selector: 'app-login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css'],
+  selector: 'app-sign-in',
+  templateUrl: './sign-in.component.html',
+  styleUrls: ['./sign-in.component.css'],
 })
-export class LoginComponent {
+export class SignInComponent {
   constructor(
     private auth: AuthService,
     private router: Router,
@@ -22,11 +22,10 @@ export class LoginComponent {
     );
   }
 
-  login() {
+  signIn() {
     if (this.auth.login()) {
       this.router.navigateByUrl(this.returnTo);
     } else {
-      // TODO error message
     }
   }
 }

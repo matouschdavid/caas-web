@@ -1,22 +1,27 @@
-<div class="card">
-    <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#addCollapsed"
-        aria-expanded="false" aria-controls="addCollapsed">
-        <h5 class="card-title m-0" (click)="initForm()">Add</h5>
-    </button>
-    <div class="collapse" id="addCollapsed">
-        <form (ngSubmit)="submitForm()">
-            <div class="card-body">
-                <div class="form-group" *ngFor="let itemField of itemFields">
-                    <label [htmlFor]="itemField.name">{{itemField.name}}</label>
-                    <input type="text" class="form-control" [id]="itemField.name" [name]="itemField.name"
-                        [(ngModel)]="itemField.value">
+<div>
+    <div class="md:grid md:grid-cols-3 md:gap-6">
+        <div class="md:col-span-1">
+            <div class="px-4 sm:px-0">
+                <h3 class="text-lg font-medium leading-6 text-gray-900">New {{itemTitle}}</h3>
+                <p class="mt-1 text-sm text-gray-600">After creation this will be visible to all customers immediately
+                </p>
+                <button type="button" class="border-2 rounded-md ring-indigo-600 ring-2 mt-5 text-indigo-600 px-2 py-1"
+                    (click)="initForm()">
+                    Reset form
+                </button>
+            </div>
+        </div>
+        <div class="mt-5 md:col-span-2 md:mt-0 flex flex-col">
+            <form (ngSubmit)="submitForm()" class="self-stretch">
+                <div class="flex flex-col mb-4" *ngFor="let itemField of itemFields">
+                    <label [htmlFor]="itemField.name" class="text-sm text-gray-400">{{itemField.name}}</label>
+                    <input type="text" class="ring-2 ring-gray-400 px-2 py-1 rounded-md m-2 mr-0" [id]="itemField.name"
+                        [name]="itemField.name" [(ngModel)]="itemField.value">
                 </div>
-            </div>
-            <div class="card-footer">
-                <button type="button" class="btn btn-secondary m-2" data-dismiss="modal" data-toggle="collapse"
-                    data-target="#addCollapsed">Close</button>
-                <button type="button" class="btn btn-primary m-2" type="submit">Save changes</button>
-            </div>
-        </form>
+                <button type="button" class="rounded-md bg-indigo-600 text-white px-4 py-3 self-stretch mt-2"
+                    type="submit">Save
+                    changes</button>
+            </form>
+        </div>
     </div>
 </div>

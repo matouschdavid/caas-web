@@ -1,15 +1,15 @@
-<div class="card mt-4 mb-4">
-    <div class="card-header">
-        <h5 class="card-title m-0">{{title(item) }}</h5>
+<div class="mt-4 mb-4 rounded-md bg-gray-900 shadow-md p-4">
+    <div class="mb-2">
+        <h5 class="text-lg text-gray-300">{{title(item) }}</h5>
     </div>
-    <div class="card-body">
+    <div class="m-2">
         <ul class="mb-0">
-            <li *ngFor="let value of body(item)">
+            <li *ngFor="let value of body(item)" class="text-gray-400">
                 {{value}}
             </li>
         </ul>
     </div>
-    <div class="card-footer">
-        <p class="card-text">{{footer(item)}}</p>
+    <div class="mt-2">
+        <p class="card-text text-gray-400">{{footer(item)}}</p>
     </div>
 </div>

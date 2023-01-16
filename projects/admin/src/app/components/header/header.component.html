@@ -1,4 +1,4 @@
-<nav class="py-2 bg-light border-bottom">
+<!-- <nav class="py-2 bg-light border-bottom">
         <div class="container d-flex flex-wrap">
                 <ul class="nav me-auto">
                         <li class="nav-item"><a routerLinkActive="active" routerLink="/customers"
@@ -14,4 +14,65 @@
                 </ul>
                 <app-user></app-user>
         </div>
-</nav>
+</nav> -->
+<div class="relative bg-white">
+        <div class="mx-auto max-w-7xl px-6">
+                <div
+                        class="flex items-center justify-between border-b-2 border-gray-100 py-6 md:justify-start md:space-x-10">
+                        <div class="flex justify-start lg:w-0 lg:flex-1">
+                                <a routerLink="/" routerLinkActive="active">
+                                        <span class="text-lg font-medium text-indigo-500">CaaS Admin</span>
+                                </a>
+                        </div>
+
+                        <nav class="hidden space-x-10 md:flex">
+
+                                <a routerLink="/products" routerLinkActive="active"
+                                        class="text-base font-medium text-gray-500 hover:text-gray-900">Products</a>
+                                <a routerLink="/customers" routerLinkActive="active"
+                                        class="text-base font-medium text-gray-500 hover:text-gray-900">Customers</a>
+                                <a routerLink="/coupons" routerLinkActive="active"
+                                        class="text-base font-medium text-gray-500 hover:text-gray-900">Coupons</a>
+                        </nav>
+                        <app-user class="hidden items-center justify-end md:flex md:flex-1 lg:w-0"></app-user>
+                </div>
+        </div>
+
+        <!--
+          Mobile menu, show/hide based on mobile menu state.
+      
+          Entering: "duration-200 ease-out"
+            From: "opacity-0 scale-95"
+            To: "opacity-100 scale-100"
+          Leaving: "duration-100 ease-in"
+            From: "opacity-100 scale-100"
+            To: "opacity-0 scale-95"
+        -->
+        <div class="absolute inset-x-0 top-0 origin-top-right transform p-2 transition md:hidden">
+                <div class="divide-y-2 divide-gray-50 rounded-lg bg-white shadow-lg ring-1 ring-black ring-opacity-5">
+                        <div class="px-5 pt-5 pb-6">
+                                <div class="flex items-center justify-between">
+                                        <span class="text-lg font-medium text-indigo-500">CaaS Admin</span>
+                                </div>
+                                <div class="mt-6">
+                                        <nav class="grid gap-y-8">
+                                                <a routerLinkActive="active" routerLink="/products"
+                                                        class="-m-3 flex items-center rounded-md p-3 hover:bg-gray-50"><span
+                                                                class="ml-3 text-base font-medium text-gray-900">Products</span>
+                                                </a>
+
+                                                <a routerLinkActive="active" routerLink="/customers"
+                                                        class="-m-3 flex items-center rounded-md p-3 hover:bg-gray-50"><span
+                                                                class="ml-3 text-base font-medium text-gray-900">Customers</span>
+                                                </a>
+                                                <a routerLinkActive="active" routerLink="/coupons"
+                                                        class="-m-3 flex items-center rounded-md p-3 hover:bg-gray-50"><span
+                                                                class="ml-3 text-base font-medium text-gray-900">Coupons</span>
+                                                </a>
+                                        </nav>
+                                </div>
+                        </div>
+                        <app-user></app-user>
+                </div>
+        </div>
+</div>

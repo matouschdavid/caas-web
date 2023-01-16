@@ -16,7 +16,17 @@ export class ItemCreateComponent {
 
   itemFields: any[] = [];
 
+  itemTitle: string = '';
+
   constructor(private router: Router, private itemService: ItemService) {}
+
+  ngOnInit(): void {
+    this.itemTitle = this.router.url.substring(1, this.router.url.length - 1);
+    this.itemTitle =
+      this.itemTitle[0].toUpperCase() +
+      this.itemTitle.substring(1, this.itemTitle.length);
+    this.initForm();
+  }
 
   initForm() {
     this.item = this.itemFunc();
@@ -38,6 +48,7 @@ export class ItemCreateComponent {
   }
 
   submitForm() {
+    console.log(this.itemFields);
     this.itemFields.forEach((val) => {
       this.item[val.name.toLowerCase()] = val.value;
     }, {});

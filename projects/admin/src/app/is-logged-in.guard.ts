@@ -23,7 +23,7 @@ export class IsLoggedInGuard implements CanActivate {
     | boolean
     | UrlTree {
     if (!this.auth.isLoggedIn()) {
-      this.router.navigate(['/login'], {
+      this.router.navigate(['/sign-in'], {
         queryParams: { returnUrl: state.url },
       });
       return false;

@@ -8,7 +8,6 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { HeaderComponent } from './components/header/header.component';
-import { LoginComponent } from './components/login/login.component';
 import { UserComponent } from './components/user/user.component';
 import { HomeComponent } from './components/home/home.component';
 import { OAuthModule } from 'angular-oauth2-oidc';
@@ -21,13 +20,13 @@ import { ItemListComponent } from './components/item-list/item-list.component';
 import { ItemListItemComponent } from './components/item-list-item/item-list-item.component';
 import { ItemCreateComponent } from './components/item-create/item-create.component';
 import { CouponPageComponent } from './components/coupon-page/coupon-page.component';
+import { SignInComponent } from './components/sign-in/sign-in.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     UserComponent,
-    LoginComponent,
     HomeComponent,
     ProductPageComponent,
     CustomerPageComponent,
@@ -36,6 +35,7 @@ import { CouponPageComponent } from './components/coupon-page/coupon-page.compon
     ItemListItemComponent,
     ItemCreateComponent,
     CouponPageComponent,
+    SignInComponent,
   ],
   imports: [
     BrowserModule,

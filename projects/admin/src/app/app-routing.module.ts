@@ -3,9 +3,9 @@ import { RouterModule, Routes } from '@angular/router';
 import { CouponPageComponent } from './components/coupon-page/coupon-page.component';
 import { CustomerPageComponent } from './components/customer-page/customer-page.component';
 import { HomeComponent } from './components/home/home.component';
-import { LoginComponent } from './components/login/login.component';
 import { ProductPageComponent } from './components/product-page/product-page.component';
 import { ShopPageComponent } from './components/shop-page/shop-page.component';
+import { SignInComponent } from './components/sign-in/sign-in.component';
 import { IsLoggedInGuard } from './is-logged-in.guard';
 
 const routes: Routes = [
@@ -36,7 +36,7 @@ const routes: Routes = [
     redirectTo: 'home',
     pathMatch: 'full',
   },
-  { path: 'login', component: LoginComponent },
+  { path: 'sign-in', component: SignInComponent },
 ];
 
 @NgModule({

@@ -1,6 +1,20 @@
-<ul class="nav">
-        <li class="nav-item" *ngIf="!isLoggedIn()"><a routerLinkActive="active" routerLink="/login"
-                        class="nav-link link-dark px-2">Login</a></li>
-        <li class="nav-item" *ngIf="isLoggedIn()"><a (click)="logout()" routerLink="/home"
-                        class="btn btn-link nav-link link-dark px-2">Logout</a></li>
-</ul>
+<div class="hidden md:flex">
+        <a *ngIf="!isLoggedIn()" routerLink="/sign-in"
+                class="ml-8 inline-flex items-center justify-center whitespace-nowrap rounded-md border border-transparent bg-indigo-600 px-4 py-2 text-base font-medium text-white shadow-sm hover:bg-indigo-700">Sign
+                in</a>
+        <a *ngIf="isLoggedIn()" (click)="logout()"
+                class="ml-8 inline-flex items-center justify-center whitespace-nowrap rounded-md border border-transparent bg-indigo-600 px-4 py-2 text-base font-medium text-white shadow-sm hover:bg-indigo-700">Log
+                out</a>
+</div>
+
+<div class="space-y-6 py-6 px-5 md:hidden">
+
+        <div>
+                <a *ngIf="!isLoggedIn()" routerLink="/sign-in"
+                        class="flex w-full items-center justify-center rounded-md border border-transparent bg-indigo-600 px-4 py-2 text-base font-medium text-white shadow-sm hover:bg-indigo-700">Sign
+                        in</a>
+                <a *ngIf="isLoggedIn()" (click)="logout()"
+                        class="flex w-full items-center justify-center rounded-md border border-transparent bg-indigo-600 px-4 py-2 text-base font-medium text-white shadow-sm hover:bg-indigo-700">Log
+                        out</a>
+        </div>
+</div>
