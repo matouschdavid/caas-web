@@ -18,7 +18,6 @@ export class ProductListComponent {
 
   ngOnInit(): void {
     this.searchService.getSearchTerm().subscribe((searchTerm) => {
-      console.log(`searchTerm: ${searchTerm}`);
       this.products$ = this.productService.getProducts(searchTerm);
     });
   }

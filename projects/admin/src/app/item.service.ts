@@ -28,6 +28,7 @@ export class ItemService extends BaseService {
   }
 
   createItem(item: any): Observable<any> {
+    console.log(item);
     return super.post(
       `${this.getControllerName()}/${this.authService.appKey}`,
       item

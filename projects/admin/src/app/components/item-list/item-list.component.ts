@@ -8,7 +8,8 @@ import { ItemService } from '../../item.service';
 })
 export class ItemListComponent {
   items: any[] = [];
-  @Input() emptyItem!: any;
+  @Input()
+  emptyItem!: () => any;
 
   @Input()
   title!: (item: any) => string;

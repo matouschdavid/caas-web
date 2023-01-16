@@ -9,7 +9,7 @@ import { Coupon } from 'projects/common/src/lib/coupon';
 })
 export class CouponPageComponent {
   getEmpty(): Coupon {
-    return new Coupon(Guid.createEmpty(), '', 0, false);
+    return new Coupon(Guid.create(), '', 0, true);
   }
 
   getTitleValue(coupon: Coupon): string {

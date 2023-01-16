@@ -1,7 +1,7 @@
 <div class="card">
     <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#addCollapsed"
         aria-expanded="false" aria-controls="addCollapsed">
-        <h5 class="card-title m-0">Add</h5>
+        <h5 class="card-title m-0" (click)="initForm()">Add</h5>
     </button>
     <div class="collapse" id="addCollapsed">
         <form (ngSubmit)="submitForm()">
@@ -13,7 +13,8 @@
                 </div>
             </div>
             <div class="card-footer">
-                <button type="button" class="btn btn-secondary m-2" data-dismiss="modal" type="reset">Close</button>
+                <button type="button" class="btn btn-secondary m-2" data-dismiss="modal" data-toggle="collapse"
+                    data-target="#addCollapsed">Close</button>
                 <button type="button" class="btn btn-primary m-2" type="submit">Save changes</button>
             </div>
         </form>

@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Guid } from 'guid-typescript';
 import { CartService } from 'projects/common/src/lib/cart.service';
+import { CouponService } from '../../../coupon.service';
 
 @Component({
   selector: 'app-checkout',
@@ -11,17 +12,22 @@ export class CheckoutComponent {
   coupons: Guid[] = [];
   couponCode: string = '';
 
-  constructor(private cartService: CartService) {}
+  constructor(
+    private cartService: CartService,
+    private couponService: CouponService
+  ) {}
 
   addCoupon() {
-    this.coupons.push(Guid.parse(this.couponCode));
-    this.couponCode = '';
+    this.couponService.getCouponByCode(this.couponCode).subscribe((coupon) => {
+      this.coupons.push(coupon.id);
+      this.couponCode = '';
+    });
   }
 
   buy() {
     this.cartService.buy(this.coupons).subscribe((order) => {
-      console.log(order);
       this.cartService.clearCart();
+      this.coupons = [];
     });
   }
 }

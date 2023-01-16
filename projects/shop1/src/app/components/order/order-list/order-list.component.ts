@@ -15,8 +15,6 @@ export class OrderListComponent {
   ngOnInit(): void {
     this.orderService.getOrders().subscribe((orders) => {
       this.orders = orders.sort((a: Order, b: Order) => {
-        console.log('a', a);
-        console.log('b', b);
         return (
           Date.parse(String(b.orderDate)) - Date.parse(String(a.orderDate))
         );
