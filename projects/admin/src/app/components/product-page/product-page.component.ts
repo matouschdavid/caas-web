@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { Product } from 'projects/common/src/lib/product';
-import { ProductService } from 'projects/shop1/src/app/product.service';
 
 @Component({
   selector: 'app-product-page',

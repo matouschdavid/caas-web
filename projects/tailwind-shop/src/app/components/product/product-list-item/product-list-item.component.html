@@ -1,0 +1,6 @@
+<div class="rounded-md bg-white shadow-md m-2 p-4 w-fit flex flex-col">
+    <h5 class="text-lg">{{product?.name}} <span class="text-sm ml-4">{{product?.price | currency}}</span></h5>
+    <p class="text-sm my-2">{{product?.description}}</p>
+    <a class="rounded-md ring-2 ring-amber-400 px-3 py-2 mt-8 text-center" [routerLink]="['/products', product?.id]"
+        routerLinkActive="active">Details</a>
+</div>

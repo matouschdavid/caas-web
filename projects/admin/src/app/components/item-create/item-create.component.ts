@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Router } from '@angular/router';
 import { Guid } from 'guid-typescript';
 import { ItemService } from '../../item.service';
@@ -9,6 +9,9 @@ import { ItemService } from '../../item.service';
   styleUrls: ['./item-create.component.css'],
 })
 export class ItemCreateComponent {
+  @Output()
+  itemAdded: EventEmitter<any> = new EventEmitter<any>();
+
   @Input()
   itemFunc!: () => any;
 
@@ -48,13 +51,13 @@ export class ItemCreateComponent {
   }
 
   submitForm() {
-    console.log(this.itemFields);
     this.itemFields.forEach((val) => {
       this.item[val.name.toLowerCase()] = val.value;
     }, {});
-    this.item.id = Guid.create().toString();
+    this.item.id = this.item.id.toString();
     this.itemService.createItem(this.item).subscribe((res) => {
-      this.router.navigate([this.router.url]);
+      this.initForm();
+      this.itemAdded.emit(this.item);
     });
   }
 }

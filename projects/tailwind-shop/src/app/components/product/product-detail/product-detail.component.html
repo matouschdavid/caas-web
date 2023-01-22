@@ -1,0 +1,6 @@
+<div *ngIf="product" class="m-2 p-4 w-fit flex flex-col">
+    <h5 class="text-lg">{{product.name}} <span class="text-sm ml-4">{{product.price | currency}}</span></h5>
+    <p class="text-sm my-2">{{product.description}}</p>
+    <button class="rounded-md ring-2 ring-amber-400 px-3 py-2 mt-8 text-center" (click)="addToCart()">Add to
+        cart</button>
+</div>

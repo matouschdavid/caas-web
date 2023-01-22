@@ -96,29 +96,29 @@
         }
       }
     },
-    "shop1": {
+    "bootstrap-shop": {
       "projectType": "application",
       "schematics": {},
-      "root": "projects/shop1",
-      "sourceRoot": "projects/shop1/src",
+      "root": "projects/bootstrap-shop",
+      "sourceRoot": "projects/bootstrap-shop/src",
       "prefix": "app",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/shop1",
-            "index": "projects/shop1/src/index.html",
-            "main": "projects/shop1/src/main.ts",
+            "outputPath": "dist/bootstrap-shop",
+            "index": "projects/bootstrap-shop/src/index.html",
+            "main": "projects/bootstrap-shop/src/main.ts",
             "polyfills": [
               "zone.js"
             ],
-            "tsConfig": "projects/shop1/tsconfig.app.json",
+            "tsConfig": "projects/bootstrap-shop/tsconfig.app.json",
             "assets": [
-              "projects/shop1/src/favicon.ico",
-              "projects/shop1/src/assets"
+              "projects/bootstrap-shop/src/favicon.ico",
+              "projects/bootstrap-shop/src/assets"
             ],
             "styles": [
-              "projects/shop1/src/styles.css"
+              "projects/bootstrap-shop/src/styles.css"
             ],
             "scripts": []
           },
@@ -153,10 +153,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "shop1:build:production"
+              "browserTarget": "bootstrap-shop:build:production"
             },
             "development": {
-              "browserTarget": "shop1:build:development"
+              "browserTarget": "bootstrap-shop:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -164,7 +164,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "shop1:build"
+            "browserTarget": "bootstrap-shop:build"
           }
         },
         "test": {
@@ -174,13 +174,104 @@
               "zone.js",
               "zone.js/testing"
             ],
-            "tsConfig": "projects/shop1/tsconfig.spec.json",
+            "tsConfig": "projects/bootstrap-shop/tsconfig.spec.json",
             "assets": [
-              "projects/shop1/src/favicon.ico",
-              "projects/shop1/src/assets"
+              "projects/bootstrap-shop/src/favicon.ico",
+              "projects/bootstrap-shop/src/assets"
             ],
             "styles": [
-              "projects/shop1/src/styles.css"
+              "projects/bootstrap-shop/src/styles.css"
+            ],
+            "scripts": []
+          }
+        }
+      }
+    },
+    "tailwind-shop": {
+      "projectType": "application",
+      "schematics": {},
+      "root": "projects/tailwind-shop",
+      "sourceRoot": "projects/tailwind-shop/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/tailwind-shop",
+            "index": "projects/tailwind-shop/src/index.html",
+            "main": "projects/tailwind-shop/src/main.ts",
+            "polyfills": [
+              "zone.js"
+            ],
+            "tsConfig": "projects/tailwind-shop/tsconfig.app.json",
+            "assets": [
+              "projects/tailwind-shop/src/favicon.ico",
+              "projects/tailwind-shop/src/assets"
+            ],
+            "styles": [
+              "projects/tailwind-shop/src/styles.css"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kb",
+                  "maximumError": "1mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "2kb",
+                  "maximumError": "4kb"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "buildOptimizer": false,
+              "optimization": false,
+              "vendorChunk": true,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "configurations": {
+            "production": {
+              "browserTarget": "tailwind-shop:build:production"
+            },
+            "development": {
+              "browserTarget": "tailwind-shop:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "tailwind-shop:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ],
+            "tsConfig": "projects/tailwind-shop/tsconfig.spec.json",
+            "assets": [
+              "projects/tailwind-shop/src/favicon.ico",
+              "projects/tailwind-shop/src/assets"
+            ],
+            "styles": [
+              "projects/tailwind-shop/src/styles.css"
             ],
             "scripts": []
           }

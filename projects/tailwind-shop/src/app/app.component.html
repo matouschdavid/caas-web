@@ -1,0 +1,14 @@
+<app-header></app-header>
+<!-- <router-outlet> as main content and <app-cart-display> as aside -->
+<div class="container mt-5">
+    <div class="grid grid-cols-4">
+        <div class="col-span-3">
+            <div class="m-4">
+                <router-outlet></router-outlet>
+            </div>
+        </div>
+        <div class="col-span-1">
+            <app-cart-display></app-cart-display>
+        </div>
+    </div>
+</div>

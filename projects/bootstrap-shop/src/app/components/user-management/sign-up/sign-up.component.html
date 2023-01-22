@@ -1,0 +1,30 @@
+<!-- form for inputting all fields of customer and sign up-->
+<form #signUpForm="ngForm" (ngSubmit)="signUp()" class="form-signin">
+    <h1 class="h3 mb-3 fw-normal">Please sign up</h1>
+    <label for="name">Name<span class="text-danger">*</span></label>
+    <input id="name" type="text" class="form-control" [(ngModel)]="customer.name" name="name" required
+        pattern="[a-zA-Z0-9- ]*" minlength="2" maxlength="50">
+    <p class="text-danger">{{errors['name']}}</p>
+
+    <label for="email">Email<span class="text-danger">*</span></label>
+    <input id="email" type="email" class="form-control" [(ngModel)]="customer.email" name="email" required email
+        maxlength="50">
+    <p class="text-danger">{{errors['email']}}</p>
+
+    <label for="cardNumber">Cardnumber<span class="text-danger">*</span></label>
+    <input id="cardNumber" type="text" class="form-control" [(ngModel)]="customer.creditCardNumber" name="cardNumber"
+        required pattern="[0-9]*">
+    <p class="text-danger">{{errors['cardNumber']}}</p>
+
+    <label for="cardExpiration">Card expiration date<span class="text-danger">*</span></label>
+    <input id="cardExpiration" type="text" class="form-control" [(ngModel)]="customer.creditCardExpiration"
+        name="cardExpiration" required pattern="[0-9][0-9]/[0-9][0-9]">
+    <p class="text-danger">{{errors['cardExpiration']}}</p>
+
+    <label for="cardCVC">Card CVC<span class="text-danger">*</span></label>
+    <input id="cardCVC" type="number" class="form-control" [(ngModel)]="customer.creditCardCVC" name="cardCVC" required
+        max="9999" min="100">
+    <p class="text-danger">{{errors['cardCVC']}}</p>
+
+    <button class="w-100 btn btn-lg btn-primary mt-5" type="submit" [disabled]="signUpForm.invalid">Sign up</button>
+</form>

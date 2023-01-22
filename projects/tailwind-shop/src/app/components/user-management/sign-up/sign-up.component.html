@@ -1,0 +1,33 @@
+<div class="flex justify-center items-center">
+    <form #signUpForm="ngForm" (ngSubmit)="signUp()" class="flex flex-col self-stretch w-1/2 max-w-sm">
+        <h1 class="text-lg mb-4">Please sign up</h1>
+        <label for="name" class="text-sm text-gray-400">Name<span class="text-red-500">*</span></label>
+        <input id="name" type="text" class="ring-2 ring-gray-400 px-2 py-1 rounded-md m-2 mr-0"
+            [(ngModel)]="customer.name" name="name" required pattern="[a-zA-Z0-9- ]*" minlength="2" maxlength="50">
+        <p class="text-red-500">{{errors['name']}}</p>
+
+        <label for="email" class="text-sm text-gray-400">Email<span class="text-red-500">*</span></label>
+        <input id="email" type="email" class="ring-2 ring-gray-400 px-2 py-1 rounded-md m-2 mr-0"
+            [(ngModel)]="customer.email" name="email" required email maxlength="50">
+        <p class="text-red-500">{{errors['email']}}</p>
+
+        <label for="cardNumber" class="text-sm text-gray-400">Cardnumber<span class="text-red-500">*</span></label>
+        <input id="cardNumber" type="text" class="ring-2 ring-gray-400 px-2 py-1 rounded-md m-2 mr-0"
+            [(ngModel)]="customer.creditCardNumber" name="cardNumber" required pattern="[0-9]*">
+        <p class="text-red-500">{{errors['cardNumber']}}</p>
+
+        <label for="cardExpiration" class="text-sm text-gray-400">Card expiration date<span
+                class="text-red-500">*</span></label>
+        <input id="cardExpiration" type="text" class="ring-2 ring-gray-400 px-2 py-1 rounded-md m-2 mr-0"
+            [(ngModel)]="customer.creditCardExpiration" name="cardExpiration" required pattern="[0-9][0-9]/[0-9][0-9]">
+        <p class="text-red-500">{{errors['cardExpiration']}}</p>
+
+        <label for="cardCVC" class="text-sm text-gray-400">Card CVC<span class="text-red-500">*</span></label>
+        <input id="cardCVC" type="number" class="ring-2 ring-gray-400 px-2 py-1 rounded-md m-2 mr-0"
+            [(ngModel)]="customer.creditCardCVC" name="cardCVC" required max="9999" min="100">
+        <p class="text-red-500">{{errors['cardCVC']}}</p>
+
+        <button class="rounded-md bg-amber-400 px-3 py-2 mt-5" type="submit" [disabled]="signUpForm.invalid">Sign
+            up</button>
+    </form>
+</div>

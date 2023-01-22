@@ -1,0 +1,11 @@
+<div class="rounded-md bg-white p-4 shadow-md m-4 flex flex-col">
+    <h5>Your cart <span *ngIf="cart.positions.length === 0">is empty</span></h5>
+    <div class="mt-4" *ngIf="cart.positions.length > 0">
+        <app-cart-list [cartItems]="cart.positions" (removeItem)="removeFromCart($event)"
+            (increaseItem)="increaseQuantity($event)" (decreaseItem)="decreaseQuantity($event)"></app-cart-list>
+    </div>
+    <div class="mt-4 flex flex-col" *ngIf="cart.positions.length > 0">
+        <p>Total: {{cart.totalPrice | currency}}</p>
+        <a routerLink="/checkout" class="rounded-md bg-amber-400 px-3 py-2 text-center">Checkout</a>
+    </div>
+</div>

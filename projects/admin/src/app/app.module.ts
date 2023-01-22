@@ -21,6 +21,7 @@ import { ItemListItemComponent } from './components/item-list-item/item-list-ite
 import { ItemCreateComponent } from './components/item-create/item-create.component';
 import { CouponPageComponent } from './components/coupon-page/coupon-page.component';
 import { SignInComponent } from './components/sign-in/sign-in.component';
+import { StatisticsComponent } from './components/statistics/statistics.component';
 
 @NgModule({
   declarations: [
@@ -36,6 +37,7 @@ import { SignInComponent } from './components/sign-in/sign-in.component';
     ItemCreateComponent,
     CouponPageComponent,
     SignInComponent,
+    StatisticsComponent,
   ],
   imports: [
     BrowserModule,

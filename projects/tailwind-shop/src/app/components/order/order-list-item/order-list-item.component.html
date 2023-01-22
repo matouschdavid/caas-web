@@ -1,0 +1,15 @@
+<div class="rounded-md bg-white drop-shadow-lg p-4 m-4" *ngIf="order">
+    <h5 class="text-lg mb-4">Order from {{ order.orderDate | date: 'dd.MM.yyyy' }}</h5>
+    <ul class="bg-gray-50 p-4 rounded-md">
+        <li *ngFor="let position of order?.positions">
+            {{position.product.name}}: {{position.product.price | currency}} x {{position.quantity}} =
+            {{position.product.price
+            * position.quantity}}
+        </li>
+    </ul>
+    <div class="mt-4">
+        <p>Total price: {{ order.totalPrice | currency }}</p>
+        <p>Discount: {{ (order.discount * -1) | currency }}</p>
+        <p>Final price: {{ ((order.totalPrice) - (order.discount)) | currency }}</p>
+    </div>
+</div>

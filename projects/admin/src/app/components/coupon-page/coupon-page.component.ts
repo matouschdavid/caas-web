@@ -17,7 +17,7 @@ export class CouponPageComponent {
   }
 
   getContentValues(coupon: Coupon): string[] {
-    return [`for ${coupon.amount}`, coupon.isValid ? 'valid' : 'invalid'];
+    return [`for ${coupon.amount} €`, coupon.isValid ? 'valid' : 'invalid'];
   }
 
   getFooterValue(coupon: Coupon): string {

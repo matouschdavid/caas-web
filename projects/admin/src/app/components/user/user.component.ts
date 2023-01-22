@@ -1,7 +1,5 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Customer } from 'projects/common/src/lib/customer';
-import { UserService } from 'projects/shop1/src/app/user.service';
 import { AuthService } from '../../auth.service';
 
 @Component({

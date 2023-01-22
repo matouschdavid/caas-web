@@ -1,0 +1,19 @@
+<div class="m-2">
+    <div class="flex flex-row mb-2">
+        <p class="card-text flex-grow">{{item?.product?.name}}</p>
+        <button type="button" class="btn btn-danger float-right" (click)="removeItemFromCart(item)">
+            <i class="fa fa-trash"></i>
+        </button>
+    </div>
+    <p class="card-text">{{item?.product?.price | currency}}</p>
+    <div class="flex flex-row mb-4">
+        <p class="card-text flex-grow">{{item?.quantity}}</p>
+        <div class="flex justify-end">
+            <button
+                class="rounded-md rounded-r-none ring-2 ring-amber-500 px-3 text-3xl text-center font-semibold text-amber-500 mr-2"
+                type="button" (click)="decreaseItemFromCart(item?.product)">-</button><button
+                class="rounded-md rounded-l-none ring-2 ring-amber-500 px-3 text-3xl text-center font-semibold text-amber-500"
+                type="button" (click)="increaseItemFromCart(item?.product)">+</button>
+        </div>
+    </div>
+</div>

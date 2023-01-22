@@ -1,0 +1,19 @@
+<h3>Your shop in <span class="text-indigo-600">numbers</span></h3>
+<div class="flex items-end my-8 w-full rounded-md bg-gray-50 p-4">
+    <p class="text-gray-500 flex-grow">Average Order Value: </p>
+    <p class="text-indigo-600 text-9xl">{{(avgOrderValue | async)?.value | currency}}</p>
+</div>
+<div class="flex items-end my-8 w-full rounded-md bg-gray-50 p-4">
+    <p class="text-gray-500 flex-grow">Coupons used: </p>
+    <p class="text-indigo-600 text-9xl">{{(couponsUsed | async)?.value}}</p>
+</div>
+<div class="flex items-end my-8 w-full rounded-md bg-gray-50 p-4">
+    <p class="text-gray-500 flex-grow">Coupons unused: </p>
+    <p class="text-indigo-600 text-9xl">{{(couponsUnused | async)?.value}}</p>
+</div>
+<div class="flex flex-col my-8 w-full rounded-md bg-gray-50 p-4">
+    <p class="text-gray-500 flex-grow mb-4">Best selling products: </p>
+    <p *ngFor="let entry of (topSellingProducts | async)?.value" class="text-xl text-right">
+        {{entry.product.name}} was bought <span class="text-indigo-600 text-4xl">{{entry.value}} times</span>
+    </p>
+</div>

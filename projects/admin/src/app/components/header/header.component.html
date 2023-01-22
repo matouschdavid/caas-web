@@ -1,21 +1,4 @@
-<!-- <nav class="py-2 bg-light border-bottom">
-        <div class="container d-flex flex-wrap">
-                <ul class="nav me-auto">
-                        <li class="nav-item"><a routerLinkActive="active" routerLink="/customers"
-                                        class="nav-link link-dark px-2 active" aria-current="page">Customers</a></li>
-                        <li class="nav-item"><a routerLinkActive="active" routerLink="/products"
-                                        class="nav-link link-dark px-2">Products</a></li>
-                        <li class="nav-item"><a routerLinkActive="active" routerLink="/coupons"
-                                        class="nav-link link-dark px-2">Coupons</a></li>
-                        <li class="nav-item"><a routerLinkActive="active" routerLink="/shop"
-                                        class="nav-link link-dark px-2">Shop</a></li>
-                        <li class="nav-item"><a routerLinkActive="active" routerLink="/stats"
-                                        class="nav-link link-dark px-2">Statistics</a></li>
-                </ul>
-                <app-user></app-user>
-        </div>
-</nav> -->
-<div class="relative bg-white">
+<div class="bg-white">
         <div class="mx-auto max-w-7xl px-6">
                 <div
                         class="flex items-center justify-between border-b-2 border-gray-100 py-6 md:justify-start md:space-x-10">
@@ -26,13 +9,16 @@
                         </div>
 
                         <nav class="hidden space-x-10 md:flex">
-
+                                <a routerLink="/shop" routerLinkActive="active"
+                                        class="text-base font-medium text-gray-500 hover:text-gray-900">Your Shop</a>
                                 <a routerLink="/products" routerLinkActive="active"
                                         class="text-base font-medium text-gray-500 hover:text-gray-900">Products</a>
                                 <a routerLink="/customers" routerLinkActive="active"
                                         class="text-base font-medium text-gray-500 hover:text-gray-900">Customers</a>
                                 <a routerLink="/coupons" routerLinkActive="active"
                                         class="text-base font-medium text-gray-500 hover:text-gray-900">Coupons</a>
+                                <a routerLink="/stats" routerLinkActive="active"
+                                        class="text-base font-medium text-gray-500 hover:text-gray-900">Statistics</a>
                         </nav>
                         <app-user class="hidden items-center justify-end md:flex md:flex-1 lg:w-0"></app-user>
                 </div>
@@ -48,14 +34,17 @@
             From: "opacity-100 scale-100"
             To: "opacity-0 scale-95"
         -->
-        <div class="absolute inset-x-0 top-0 origin-top-right transform p-2 transition md:hidden">
+        <div class="origin-top-right transform p-2 transition md:hidden">
                 <div class="divide-y-2 divide-gray-50 rounded-lg bg-white shadow-lg ring-1 ring-black ring-opacity-5">
                         <div class="px-5 pt-5 pb-6">
-                                <div class="flex items-center justify-between">
-                                        <span class="text-lg font-medium text-indigo-500">CaaS Admin</span>
-                                </div>
+
                                 <div class="mt-6">
                                         <nav class="grid gap-y-8">
+                                                <a routerLinkActive="active" routerLink="/shop"
+                                                        class="-m-3 flex items-center rounded-md p-3 hover:bg-gray-50"><span
+                                                                class="ml-3 text-base font-medium text-gray-900">Your
+                                                                Shop</span>
+                                                </a>
                                                 <a routerLinkActive="active" routerLink="/products"
                                                         class="-m-3 flex items-center rounded-md p-3 hover:bg-gray-50"><span
                                                                 class="ml-3 text-base font-medium text-gray-900">Products</span>
@@ -68,6 +57,10 @@
                                                 <a routerLinkActive="active" routerLink="/coupons"
                                                         class="-m-3 flex items-center rounded-md p-3 hover:bg-gray-50"><span
                                                                 class="ml-3 text-base font-medium text-gray-900">Coupons</span>
+                                                </a>
+                                                <a routerLinkActive="active" routerLink="/stats"
+                                                        class="-m-3 flex items-center rounded-md p-3 hover:bg-gray-50"><span
+                                                                class="ml-3 text-base font-medium text-gray-900">Statistics</span>
                                                 </a>
                                         </nav>
                                 </div>

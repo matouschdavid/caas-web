@@ -21,8 +21,16 @@ export class ItemListComponent {
   constructor(private itemService: ItemService) {}
 
   ngOnInit() {
+    this.loadItems();
+  }
+
+  loadItems() {
     this.itemService.getItems().subscribe((items) => {
       this.items = items;
     });
+  }
+
+  itemAdded(item: any) {
+    this.loadItems();
   }
 }

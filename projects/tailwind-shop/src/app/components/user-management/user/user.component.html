@@ -1,0 +1,13 @@
+<ul class="flex">
+        <li class="m-2" *ngIf="!isLoggedIn()"><a routerLinkActive="active" routerLink="/login"
+                        class="text-white">Login</a></li>
+        <li class="m-2" *ngIf="!isLoggedIn()"><a routerLinkActive="active" routerLink="/sign-up"
+                        class="rounded-md bg-amber-400 px-3 py-2">Sign
+                        up</a></li>
+        <li class="m-2" *ngIf="isLoggedIn()"><a routerLinkActive="active" routerLink="/profile" class="text-white">
+                        Profile
+                </a></li>
+        <li class="m-2" *ngIf="isLoggedIn()"><a (click)="logout()" routerLink="/home"
+                        class="rounded-md bg-amber-400 px-3 py-2">Logout</a>
+        </li>
+</ul>

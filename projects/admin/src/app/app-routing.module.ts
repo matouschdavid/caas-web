@@ -6,6 +6,7 @@ import { HomeComponent } from './components/home/home.component';
 import { ProductPageComponent } from './components/product-page/product-page.component';
 import { ShopPageComponent } from './components/shop-page/shop-page.component';
 import { SignInComponent } from './components/sign-in/sign-in.component';
+import { StatisticsComponent } from './components/statistics/statistics.component';
 import { IsLoggedInGuard } from './is-logged-in.guard';
 
 const routes: Routes = [
@@ -37,6 +38,11 @@ const routes: Routes = [
     pathMatch: 'full',
   },
   { path: 'sign-in', component: SignInComponent },
+  {
+    path: 'stats',
+    component: StatisticsComponent,
+    canActivate: [IsLoggedInGuard],
+  },
 ];
 
 @NgModule({
