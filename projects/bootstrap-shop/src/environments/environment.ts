@@ -1,4 +1,4 @@
 export const environment = {
-      production: false,
-      appKey: 'f1b121e9-5cd7-432d-8614-29d9fc48e840',
-    };
+  production: false,
+  appKey: '39d51c93-8c4e-428f-8d2b-1e2d23653b23',
+};
